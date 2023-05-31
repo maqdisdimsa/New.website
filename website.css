@@ -1,5 +1,13 @@
 *{
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+:root {
+    --bg-color: #222327;
+    --text-color: #fff;
+    --main-color: #29fd53
 }
 
 body{
@@ -46,7 +54,17 @@ body{
 .topnav a:hover{
     background-color: #ddd;
     color: black;
+} 
+
+
+#menu-icon{
+    font-size: 35px;
+    color: #f2f2f2;
+    cursor: pointer;
+    z-index: 10001; 
+    display: none;
 }
+
 
 /*create two unequal column that floats naxt to each other*/
 /*left column*/
@@ -79,7 +97,8 @@ body{
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
-}
+} 
+
 
 /*clear column*/
 
@@ -111,8 +130,160 @@ stack on top of each other instead of next to each other*/
 /*responsive layout- when the screen is less than 400px wide, make the navigation links
 stack on top of each other instead of next to each other*/
 @media screen and (max-width: 400px){
-    .topnav a {
-        float: none;
-        width: 100%;
+    .topnav  {
+        position: absolute;
+        top: 5%;
+        right: -100%;
+        width: 270px;
+        height: 29vh;
+        background: #aaa;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+    .topnav .open{
+        right: 2%;
+    }
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+:root{
+    --bg-color: #222327;
+    --text-color: #fff;
+    --main-color: #916868;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #222327;
+    padding: 28px 12%;
+    transition: all .50s ease;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo i{
+    color: var(--main-color);
+    font-size: 28px;
+    margin-right: 3px;
+}
+.logo span{
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.tonav{
+    display: flex;
+}
+.tonav a{
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition: all .50s ease;
+}
+.tonav a:hover{
+    color: var(--main-color);
+}
+.tonav a.active{
+    color: var(--main-color);
+}
+.main{
+    display: flex;
+    align-items: center;
+}
+.main a{
+    margin-right: 25px;
+    margin-left: 10px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+.user{
+    display: flex;
+    align-items: center;
+}
+.user i{
+    color: var(--main-color);
+    font-size: 28px;
+    margin-right: 7px;
+}
+.main a:hover{
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 35px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+
+
+@media (max-width: 1280px) {
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    .tonav a{
+        padding: 5px 0;
+        margin: 0px 20px;
+    }
+
+}
+
+@media (max-width: 1090px) {
+    #menu-icon{
+        display: flex;
+    }
+    .tonav{
+        overflow: hidden;
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 29vh;
+        background: var(--main-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+    .tonav a{
+        display: block;
+        margin: 12px 0;
+        padding: 0px 25px;
+        transition: all .50s ease;
+    }
+    .tonav a:hover{
+        color: var(--text-color);
+        transform: translateY(5px);
+    }
+    .tonav a.active{
+        color: var(--text-color);
+    } 
+    .tonav .open{
+        right: 2%;
     }
 }
